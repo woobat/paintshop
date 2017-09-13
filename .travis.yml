@@ -1,2 +1,5 @@
 language: java
 
+#Send coverage reports to coveralls (after build is successful)
+after_success:
+  - mvn clean test jacoco:report coveralls:report
