@@ -13,7 +13,6 @@ import com.gondor.kata.parser.exception.ParsingException;
 import com.gondor.kata.solver.Solver;
 import com.gondor.kata.solver.SolverFactory;
 import com.google.devtools.common.options.OptionsParser;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.Optional;
@@ -23,7 +22,6 @@ import java.util.Optional;
  */
 public class Application {
 
-    @NotNull
     public static PaintShopOptions parseCommandLine(String[] args) {
         PaintShopOptions options = CommandLineParser.parse(args);
         System.out.format("Solving problem at %s using strategy %s...\n", options.filePath, options.strategy);
@@ -34,8 +32,7 @@ public class Application {
         FileParser parser = new FileParser();
         return parser.parse(filePath);
     }
-
-    @NotNull
+    
     public static Optional<Solution> solveProblem(Strategy strategy, Problem problem) {
         Solver solver = SolverFactory.solver(strategy, problem);
         solver.solve();
