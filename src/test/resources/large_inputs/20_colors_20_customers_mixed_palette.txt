@@ -1,0 +1,21 @@
+20
+1 M 2 G 3 M
+1 M 2 G 4 M 5 M 6 M 7 M
+3 G 8 M 9 M
+4 G 10 G 11 G
+5 G 12 M
+6 G 2 M 3 M 4 M 11 M
+7 G 16 M
+8 G 17 M
+9 G 19 M
+10 G 5 M
+11 G 19 G
+12 G 16 G 17 M 18 M
+13 G 1 M
+14 G 3 G
+15 G 4 M
+16 G 19 G
+17 G 20 M
+18 G 15 G
+19 M
+20 G 1 M

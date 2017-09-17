@@ -78,4 +78,3 @@ public class Customer {
         return new Customer(customerName, restColors);
     }
 }
-

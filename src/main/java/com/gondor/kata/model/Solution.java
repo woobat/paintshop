@@ -29,6 +29,17 @@ public class Solution {
         return colors.size() == totalColors;
     }
 
+    /**
+     * prints state of color selection for debugging purpose
+     */
+    private void printState() {
+        String state = colors.entrySet()
+                .stream()
+                .map(color -> color.getValue().toString())
+                .reduce("", (color1, color2) -> color1 + ":" + color2);
+        System.out.println(state);
+    }
+
     public boolean isGoalNode() {
         int satisfactionCount = 0;
 
@@ -43,15 +54,12 @@ public class Solution {
             }
         }
 
-        String state = colors.entrySet()
-                .stream()
-                .map(color -> color.getValue().toString())
-                .reduce("", (color1, color2) -> color1 + ":" + color2);
-        System.out.println(state);
+        //printState();
 
         if (satisfactionCount == customers.size()) {
             result = colors;
         }
+
         return satisfactionCount == customers.size();
     }
 
@@ -75,7 +83,8 @@ public class Solution {
     }
 
     public int totalMattes() {
-        return (int) colors().keySet().stream()
+        return (int) colors().keySet()
+                .stream()
                 .filter(k -> colors().get(k).palette().equals(Palette.MATTE))
                 .count();
     }

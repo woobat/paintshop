@@ -1,5 +1,7 @@
 package com.gondor.kata.model;
 
+import com.google.common.base.Preconditions;
+
 import java.util.Objects;
 
 /**
@@ -10,8 +12,8 @@ public class Color {
     private final Palette palette;
 
     public Color(String name, Palette palette) {
-        this.name = name;
-        this.palette = palette;
+        this.name = Preconditions.checkNotNull(name);
+        this.palette = Preconditions.checkNotNull(palette);
     }
 
     public String name() {
@@ -37,9 +39,9 @@ public class Color {
 
     @Override
     public String toString() {
-        return "Color{" +
+        return "Color(" +
                 "\'" + name + "\'" +
                 ",\' " + palette + "\'" +
-                '}';
+                ')';
     }
 }
