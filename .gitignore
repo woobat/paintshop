@@ -29,5 +29,6 @@ hs_err_pid*
 # Maven output
 target
 logs
+dependency-reduced-pom.xml
 
 .DS_Store
