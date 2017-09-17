@@ -1,6 +1,7 @@
 package com.gondor.kata.model;
 
 import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 
 import java.util.List;
@@ -15,8 +16,8 @@ public class Customer {
     private final List<Color> colors;
 
     public Customer(String name, List<Color> colors) {
-        this.name = name;
-        this.colors = colors;
+        this.name = Preconditions.checkNotNull(name);
+        this.colors = Preconditions.checkNotNull(colors);
     }
 
     public String name() {
@@ -27,18 +28,17 @@ public class Customer {
         return ImmutableList.copyOf(colors);
     }
 
-    public Map<String, Palette> colorMap() {
+    private Map<String, Palette> colorMap() {
         return colors().stream()
-                .collect(Collectors.toMap(x -> x.name(), x -> x.palette()));
+                .collect(Collectors.toMap(Color::name, Color::palette));
     }
 
     public int totalColors() {
         return colors().size();
     }
 
-    public boolean hasColor(Color color) {
-        return colorMap().containsKey(color.name());
-
+    public boolean hasColor(String colorName) {
+        return colorMap().containsKey(colorName);
     }
 
     public boolean hasColorWithPalette(Color color) {
@@ -78,3 +78,4 @@ public class Customer {
         return new Customer(customerName, restColors);
     }
 }
+

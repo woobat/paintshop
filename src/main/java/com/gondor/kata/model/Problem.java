@@ -37,16 +37,8 @@ public class Problem {
         return colorNames.size();
     }
 
-    public Map<String, Set<Customer>> colorToCustomers() {
-
-        Map<String, Set<Customer>> map = new HashMap<>();
-
-        for (Customer customer : customers) {
-            for (Color color : customer.colors()) {
-                map.computeIfAbsent(color.name(), v -> new HashSet<>()).add(customer);
-            }
-        }
-        return map;
+    public int totalDomains() {
+        return colorDomains().size();
     }
-
 }
+

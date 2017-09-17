@@ -14,4 +14,9 @@ public class ParsingException extends Exception {
     public ParsingException(String message, IOException e) {
         super(message, e);
     }
+
+    public ParsingException(Exception e) {
+        super(e);
+    }
 }
+

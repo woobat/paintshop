@@ -1,5 +1,7 @@
 package com.gondor.kata.model;
 
+import java.util.Arrays;
+
 /**
  * Created by coding on 09/09/2017.
  */
@@ -7,10 +9,14 @@ public enum Palette {
     GLOSS("G"),
     MATTE("M");
 
-    private final String name;
+    private final String shortName;
 
-    Palette(String name) {
-        this.name = name;
+    public String shortName() {
+        return shortName;
+    }
+
+    Palette(String shortName) {
+        this.shortName = shortName;
     }
 
     public static boolean isValid(String name) {
@@ -22,15 +28,20 @@ public enum Palette {
         return true;
     }
 
-    public static Palette from(String str) {
+    public static boolean isValidShortName(String name) {
+
+        return Arrays.stream(Palette.values())
+                .anyMatch(p -> p.shortName.equals(name));
+    }
+
+    public static Palette fromShortName(String str) {
 
         for (Palette palette : Palette.values()) {
-            if (palette.name.equals(str)) {
+            if (palette.shortName.equals(str)) {
                 return palette;
             }
         }
 
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException(String.format("Wrong Palette name = %s", str));
     }
-
 }
