@@ -14,4 +14,5 @@ public class NaiveSearchTest extends AbstractSolverTest {
         return new NaiveSearch(problem);
     }
 
+
 }

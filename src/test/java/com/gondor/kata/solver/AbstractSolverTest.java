@@ -15,6 +15,8 @@ import java.util.Optional;
 import static org.junit.Assert.assertEquals;
 
 /**
+ * Tests for the solvers with relatively small input files.
+ * <p>
  * Created by coding on 17/09/2017.
  */
 public abstract class AbstractSolverTest {
