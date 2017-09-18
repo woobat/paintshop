@@ -24,7 +24,7 @@ public class SolverFactory {
     }
 
     public static Solver backtrackingWithForwardChecking(Problem problem) {
-        return new BackTrackingWithForwardChecking(problem);
+        return new BacktrackingWithForwardChecking(problem);
     }
 
     public static Solver backtrackingWithForwardCheckingAndMrv(Problem problem) {

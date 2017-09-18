@@ -5,10 +5,10 @@ import com.gondor.kata.model.Problem;
 /**
  * Created by coding on 18/09/2017.
  */
-public class BackTrackingWithForwardCheckingTest extends AbstractSolverTestHavingLargeInputs {
+public class BacktrackingWithForwardCheckingTest extends AbstractSolverTestHavingLargeInputs {
 
     @Override
     Solver getSolver(Problem problem) {
-        return new BackTrackingWithForwardChecking(problem);
+        return new BacktrackingWithForwardChecking(problem);
     }
 }

@@ -14,9 +14,9 @@ import java.util.List;
  * <p>
  * Backtracking based solution which prunes the search space with forward checking.
  */
-public class BackTrackingWithForwardChecking extends AbstractSolver {
+public class BacktrackingWithForwardChecking extends AbstractSolver {
 
-    public BackTrackingWithForwardChecking(Problem problem) {
+    public BacktrackingWithForwardChecking(Problem problem) {
         super(problem);
     }
 
