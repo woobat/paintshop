@@ -22,15 +22,13 @@ Contents
 [Quick Start](#quick-start)
 
 [Run](#run)
-
-[Reference](#reference)
  
 * * * * *
 
 Problem
 =======
 
-You have a paint shop, and being the owner of the shop you have to optimize the operational expense to keep the shop profitable. However being a prudent shop keeper you *put customers first and walk back to a solution* such that the solution can keep the cost to a minimum.
+You have a paint shop, and being the owner of the shop you have to optimize the operational expense to keep the shop profitable. However being a prudent shopkeeper you *put customers first and walk back to a solution* such that the solution can keep the cost to a minimum.
 
 This leads you to solve a *Constraint Satisfaction Problem (CSP)*. Here you have a set of few different colors of paint that you can sell and each color can be either *gloss* or *matte*. You want to mix the colors, so that:
 
@@ -45,7 +43,7 @@ Solution
 
 This is essentially a search problem where there is a need to systematically search the complete problem space. 
 
-- An initial solution can be just to approach this problem as a recursive backtracking solution where the complete search space will be enumerated and the solution will be picked which has minimum cost to satisfy the given constraint. So for this specific problem there is a need to traverse each color and domain and to pick the solution that will have minimum number of *mattes* to satisfy all the customers.
+- An initial solution can be just to approach this problem as a recursive backtracking solution where the complete search space will be enumerated and the solution will be picked which has the minimum cost to satisfy the given constraint. So for this specific problem there is a need to traverse each color and domain and to pick the solution that will have minimum number of *mattes* to satisfy all the customers.
 
 - Essentially this naive solution will explore all the leaf nodes of the search space and the leaf node having least cost will be the optimal solution. However, the complexity lies on the fact that this given search space can grow quite fast for a large number of colors. As an example, if there are *M* colors having *N* possible domain, it is essentially ![leaf states](http://latex.codecogs.com/gif.latex?M%5E%7B%7CD%7C%7D) number of leaf nodes in the search space that needs to be explored before determining the optimal solution.
 
@@ -88,6 +86,8 @@ To do
 - **Using Standard Library**: There are well recognized libraries for solving Constraint Satisfaction Problems and any such library ([choco solver](http://www.choco-solver.org/)) can be utilized for this problem. It fact, using such libraries will become useful to maintain this project in the production environment as these libraries provide higher level of abstraction to specify the CSP problems. At the same time if the team needs to solve a similar problem, using the standard solver will help to develop solution faster in a maintainable way.
 
 - **Control Flow**: A *Checked Exception* (`ConstraintViolation`) is used in the `AbstractSolver` class in the flow control when there is no valid assignment. At the time of reviewing the code this is coming up to me this might have been approached better. I am happy to revisit this scenario this if there is any question that comes up during PR review.
+
+- **Code Comment**: Code comments can be enhanced specially for the constraint solver methods.
 
 Prerequisite
 ============

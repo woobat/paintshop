@@ -79,8 +79,8 @@ public class ApplicationTest {
 
     @Test
     public void testValidSolution() throws Exception {
-        /**
-         * load a known solution check whether output is displayed correctly
+        /*
+          load a known solution check whether output is displayed correctly
          */
         Optional<Solution> solution = loadProblemAndGetSolution("has_solutions/valid_problem_5_colors_3_customers.txt");
         String result = Application.outputSolution(solution);
@@ -90,8 +90,8 @@ public class ApplicationTest {
 
     @Test
     public void testProblemHavingNoSolution() throws Exception {
-        /**
-         * load a unknown solution check whether output is displayed correctly
+        /*
+          load a unknown solution check whether output is displayed correctly
          */
         Optional<Solution> solution = loadProblemAndGetSolution("without_solutions/no_solution_1_color_2_customers.txt");
         String result = Application.outputSolution(solution);

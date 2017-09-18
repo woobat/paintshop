@@ -2,8 +2,6 @@ package com.gondor.kata.solver;
 
 import com.gondor.kata.model.Problem;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by coding on 17/09/2017.
  */

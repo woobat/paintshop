@@ -22,7 +22,7 @@ public class FileParserTest {
     private Parser fileParser;
 
     @Rule
-    public ExpectedException exception = ExpectedException.none();
+    public final ExpectedException exception = ExpectedException.none();
 
     @Before
     public void setUp() {
@@ -102,8 +102,8 @@ public class FileParserTest {
 
     @Test
     public void canDetectEmptySpace() throws ParsingException {
-        /**
-         * Treating complete empty space in between the customer color choices as ill formatted file
+        /*
+          Treating complete empty space in between the customer color choices as ill formatted file
          */
         File file = new File(getClass().getClassLoader()
                 .getResource("invalid_inputs/empty_line_in_the_file.txt").getFile());

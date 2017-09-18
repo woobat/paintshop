@@ -17,10 +17,10 @@ import static org.junit.Assert.assertEquals;
 public class CommandLineParserTest {
 
     @Rule
-    public ExpectedException ex = ExpectedException.none();
+    public final ExpectedException ex = ExpectedException.none();
 
     @Rule
-    public TemporaryFolder folder = new TemporaryFolder();
+    public final TemporaryFolder folder = new TemporaryFolder();
 
     @Test
     public void parse() throws IOException {

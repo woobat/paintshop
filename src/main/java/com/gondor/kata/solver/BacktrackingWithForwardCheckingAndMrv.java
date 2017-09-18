@@ -28,8 +28,8 @@ public class BacktrackingWithForwardCheckingAndMrv extends AbstractSolver {
         String colorName;
 
         if (customers.size() == 0) {
-            /**
-             * if there is no customer, just pick up the color
+            /*
+              if there is no customer, just pick up the color
              */
             colorName = colorNames.remove(0);
         } else {

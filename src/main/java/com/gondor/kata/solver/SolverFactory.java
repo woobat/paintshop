@@ -13,7 +13,7 @@ public class SolverFactory {
         if (strategy.equals(Strategy.NAIVE_SEARCH)) {
             return naiveSearchSolver(problem);
         } else if (strategy.equals((Strategy.BACKTRACKING_WITH_FORWARD_CHECKING))) {
-            return backTrackingWithForwardChecking(problem);
+            return backtrackingWithForwardChecking(problem);
         } else {
             return backtrackingWithForwardCheckingAndMrv(problem);
         }
@@ -23,7 +23,7 @@ public class SolverFactory {
         return new NaiveSearch(problem);
     }
 
-    public static Solver backTrackingWithForwardChecking(Problem problem) {
+    public static Solver backtrackingWithForwardChecking(Problem problem) {
         return new BackTrackingWithForwardChecking(problem);
     }
 
