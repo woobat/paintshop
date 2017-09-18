@@ -47,7 +47,7 @@ This is essentially a search problem where there is a need to systematically sea
 
 - Essentially this naive solution will explore all the leaf nodes of the search space and the leaf node having least cost will be the optimal solution. However, the complexity lies on the fact that this given search space can grow quite fast for a large number of colors. As an example, if there are *M* colors having *N* possible domain, it is essentially ![leaf states](http://latex.codecogs.com/gif.latex?M%5E%7B%7CD%7C%7D) number of leaf nodes in the search space that needs to be explored before determining the optimal solution.
 
-- In order to reduce the search space couple of interesting optimization techniques can be employed, namely forward checking, choosing the most constrained variable a.k.a minimum remaining values (MRV) or *fail first* heuristic .
+- In order to reduce the search space couple of interesting optimization techniques can be employed, namely forward checking, choosing the most constrained variable a.k.a minimum remaining values (MRV) or *fail first* heuristic.
 
 Good Parts
 ===========

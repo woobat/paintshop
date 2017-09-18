@@ -11,6 +11,8 @@ import java.util.List;
 
 /**
  * Created by coding on 18/09/2017.
+ * <p>
+ * Backtracking based solution which prunes the search space with forward checking.
  */
 public class BackTrackingWithForwardChecking extends AbstractSolver {
 
@@ -25,6 +27,12 @@ public class BackTrackingWithForwardChecking extends AbstractSolver {
 
     @Override
     protected List<Customer> customerListAfterColorAssignment(Problem problem, String colorName, Palette domain) throws ConstraintViolation {
+        /*
+        Upon the assignment of this color customer list needs to be updated for example
+
+        - if this assignment satisfies the customer this customer can be removed
+        - on the other hand if there is a constraint violation there is no problem to explore further
+         */
         return ProblemHelper.newCustomerListAfterColorPick(problem.customers(), new Color(colorName, domain));
     }
 

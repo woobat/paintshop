@@ -9,6 +9,9 @@ import java.util.List;
 
 /**
  * Created by coding on 17/09/2017.
+ *
+ * Systematically explore the search space by traversing each color and domain and finally pick the solution
+ * that will have minimum number of *mattes* to satisfy all the customers.
  */
 public class NaiveSearch extends AbstractSolver {
 

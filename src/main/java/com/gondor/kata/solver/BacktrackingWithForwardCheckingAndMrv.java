@@ -12,6 +12,8 @@ import java.util.stream.Collectors;
 
 /**
  * Created by coding on 18/09/2017.
+ *
+ * Backtracking based solution which chooses the most constrained variable a.k.a minimum remaining values (MRV).
  */
 public class BacktrackingWithForwardCheckingAndMrv extends AbstractSolver {
 
@@ -19,6 +21,12 @@ public class BacktrackingWithForwardCheckingAndMrv extends AbstractSolver {
         super(problem);
     }
 
+    /**
+     * choose the color which is most constrained
+     *
+     * @param problem
+     * @return
+     */
     protected AbstractSolver.Assignment assignColor(Problem problem) {
         // choose a color along with the domain
 
