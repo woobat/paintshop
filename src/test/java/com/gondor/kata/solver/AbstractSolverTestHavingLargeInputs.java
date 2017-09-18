@@ -10,7 +10,7 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Test for solvers having large inputs.
+ * Test for solvers that can handle large inputs.
  * <p>
  * Created by coding on 18/09/2017.
  */

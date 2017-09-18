@@ -91,7 +91,7 @@ public class ApplicationTest {
     @Test
     public void testProblemHavingNoSolution() throws Exception {
         /*
-          load a unknown solution check whether output is displayed correctly
+          load an unknown solution and check whether output is displayed correctly
          */
         Optional<Solution> solution = loadProblemAndGetSolution("without_solutions/no_solution_1_color_2_customers.txt");
         String result = Application.outputSolution(solution);

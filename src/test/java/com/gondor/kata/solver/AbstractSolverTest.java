@@ -15,7 +15,11 @@ import java.util.Optional;
 import static org.junit.Assert.assertEquals;
 
 /**
+ *
  * Tests for the solvers with relatively small input files.
+ *
+ * Given the small problem space, even the naive search solution should be able to handle these tests.
+ *
  * <p>
  * Created by coding on 17/09/2017.
  */
