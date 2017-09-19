@@ -9,7 +9,7 @@ public class NaiveSearchTest extends AbstractSolverTest {
 
     @Override
     Solver getSolver(Problem problem) {
-        return new NaiveSearch(problem);
+        return SolverFactory.naiveSearchSolver(problem);
     }
 
 

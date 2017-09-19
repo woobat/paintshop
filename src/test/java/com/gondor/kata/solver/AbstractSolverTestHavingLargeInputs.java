@@ -19,7 +19,7 @@ public abstract class AbstractSolverTestHavingLargeInputs extends AbstractSolver
     @Test
     public void testCanHandleTwentyCustomersAllGloss() throws ParsingException {
 
-        solvePaintShopProblem("large_inputs/20_colors_20_customers_all_gloss.txt");
+        Solver solver = solvePaintShopProblem("large_inputs/20_colors_20_customers_all_gloss.txt");
 
         assertEquals(true, solver.isSolvable());
 
@@ -49,7 +49,7 @@ public abstract class AbstractSolverTestHavingLargeInputs extends AbstractSolver
     @Test
     public void testCanHandleTwentyCustomersMixedPalette() throws ParsingException {
 
-        solvePaintShopProblem("large_inputs/20_colors_20_customers_mixed_palette.txt");
+        Solver solver = solvePaintShopProblem("large_inputs/20_colors_20_customers_mixed_palette.txt");
 
         assertEquals(true, solver.isSolvable());
 
@@ -79,7 +79,7 @@ public abstract class AbstractSolverTestHavingLargeInputs extends AbstractSolver
     @Test
     public void testCanHandleFiftyCustomers() throws ParsingException {
 
-        solvePaintShopProblem("large_inputs/50_colors_50_customers_all_gloss.txt");
+        Solver solver = solvePaintShopProblem("large_inputs/50_colors_50_customers_all_gloss.txt");
 
         assertEquals(true, solver.isSolvable());
 

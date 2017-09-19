@@ -9,6 +9,6 @@ public class BacktrackingWithForwardCheckingTest extends AbstractSolverTestHavin
 
     @Override
     Solver getSolver(Problem problem) {
-        return new BacktrackingWithForwardChecking(problem);
+        return SolverFactory.backtrackingWithForwardChecking(problem);
     }
 }

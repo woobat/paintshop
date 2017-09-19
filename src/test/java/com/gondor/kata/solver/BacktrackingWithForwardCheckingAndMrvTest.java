@@ -9,7 +9,7 @@ public class BacktrackingWithForwardCheckingAndMrvTest extends AbstractSolverTes
 
     @Override
     Solver getSolver(Problem problem) {
-        return new BacktrackingWithForwardCheckingAndMrv(problem);
+        return SolverFactory.backtrackingWithForwardCheckingAndMrv(problem);
     }
 
 }

@@ -15,27 +15,25 @@ import java.util.Optional;
 import static org.junit.Assert.assertEquals;
 
 /**
- *
  * Tests for the solvers with relatively small input files.
- *
+ * <p>
  * Given the small problem space, even the naive search solution should be able to handle these tests.
- *
+ * <p>
  * <p>
  * Created by coding on 17/09/2017.
  */
 public abstract class AbstractSolverTest {
-
-    protected Solver solver;
     private FileParser fileParser = new FileParser();
 
     abstract Solver getSolver(Problem problem);
 
-    public void solvePaintShopProblem(String inputFile) throws ParsingException {
+    Solver solvePaintShopProblem(String inputFile) throws ParsingException {
         File file = new File(getClass().getClassLoader().getResource(inputFile).getFile());
         Problem problem = fileParser.parse(file);
 
-        solver = getSolver(problem);
+        Solver solver = getSolver(problem);
         solver.solve();
+        return solver;
     }
 
     @Before
@@ -45,7 +43,7 @@ public abstract class AbstractSolverTest {
 
     @Test
     public void oneCustomerWithOnlyOneColors() throws ParsingException {
-        solvePaintShopProblem("has_solutions/valid_problem_1_color_1_customer.txt");
+        Solver solver = solvePaintShopProblem("has_solutions/valid_problem_1_color_1_customer.txt");
 
         assertEquals(true, solver.isSolvable());
 
@@ -55,7 +53,7 @@ public abstract class AbstractSolverTest {
 
     @Test
     public void oneCustomerWithOnlyManyColors() throws ParsingException {
-        solvePaintShopProblem("has_solutions/valid_problem_N_color_1_customer.txt");
+        Solver solver = solvePaintShopProblem("has_solutions/valid_problem_N_color_1_customer.txt");
 
         assertEquals(true, solver.isSolvable());
 
@@ -74,7 +72,7 @@ public abstract class AbstractSolverTest {
 
     @Test
     public void testValidProblemWithFiveColorsWithThreeCustomers() throws ParsingException {
-        solvePaintShopProblem("has_solutions/valid_problem_5_colors_3_customers.txt");
+        Solver solver = solvePaintShopProblem("has_solutions/valid_problem_5_colors_3_customers.txt");
 
         assertEquals(true, solver.isSolvable());
 
@@ -89,7 +87,7 @@ public abstract class AbstractSolverTest {
 
     @Test
     public void testValidProblemWithFiveColorsWithManyCustomers() throws ParsingException {
-        solvePaintShopProblem("has_solutions/valid_problem_5_colors_14_customers.txt");
+        Solver solver = solvePaintShopProblem("has_solutions/valid_problem_5_colors_14_customers.txt");
 
         Map<String, Color> map = solver.solution().get().colors();
 
@@ -111,7 +109,7 @@ public abstract class AbstractSolverTest {
          * There was a glitch in the logic and algorithm was not traversing the search space. So add this
          * failing test to ensure regression does not happen.
          */
-        solvePaintShopProblem("has_solutions/first_solution_that_is_not_optimal.txt");
+        Solver solver = solvePaintShopProblem("has_solutions/first_solution_that_is_not_optimal.txt");
 
         Map<String, Color> map = solver.solution().get().colors();
 
@@ -125,7 +123,7 @@ public abstract class AbstractSolverTest {
 
     @Test
     public void canHandleNoSolution() throws ParsingException {
-        solvePaintShopProblem("without_solutions/no_solution_1_color_2_customers.txt");
+        Solver solver = solvePaintShopProblem("without_solutions/no_solution_1_color_2_customers.txt");
 
         assertEquals(false, solver.isSolvable());
         assertEquals(Optional.empty(), solver.solution());
@@ -133,7 +131,7 @@ public abstract class AbstractSolverTest {
 
     @Test
     public void canHandleNoSolutionWithManyColors() throws ParsingException {
-        solvePaintShopProblem("without_solutions/no_solution_more_than_one_color.txt");
+        Solver solver = solvePaintShopProblem("without_solutions/no_solution_more_than_one_color.txt");
 
         assertEquals(false, solver.isSolvable());
         assertEquals(Optional.empty(), solver.solution());
@@ -141,7 +139,7 @@ public abstract class AbstractSolverTest {
 
     @Test
     public void canHandleAllGloss() throws ParsingException {
-        solvePaintShopProblem("has_solutions/valid_problem_all_gloss.txt");
+        Solver solver = solvePaintShopProblem("has_solutions/valid_problem_all_gloss.txt");
 
         assertEquals(true, solver.isSolvable());
 
@@ -160,7 +158,7 @@ public abstract class AbstractSolverTest {
 
     @Test
     public void canHandleAllMatte() throws ParsingException {
-        solvePaintShopProblem("has_solutions/valid_problem_all_matte.txt");
+        Solver solver = solvePaintShopProblem("has_solutions/valid_problem_all_matte.txt");
 
         assertEquals(true, solver.isSolvable());
 
@@ -179,7 +177,7 @@ public abstract class AbstractSolverTest {
 
     @Test
     public void testWithInterleavedPalette() throws ParsingException {
-        solvePaintShopProblem("has_solutions/valid_problem_interleaved_palette.txt");
+        Solver solver = solvePaintShopProblem("has_solutions/valid_problem_interleaved_palette.txt");
 
         assertEquals(true, solver.isSolvable());
 
