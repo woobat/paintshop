@@ -27,9 +27,8 @@ public class BacktrackingWithForwardCheckingAndMrv extends AbstractSolver {
      * @param problem
      * @return
      */
+    @Override
     protected AbstractSolver.Assignment assignColor(Problem problem) {
-        // choose a color along with the domain
-
         List<Customer> customers = problem.customers();
         List<String> colorNames = problem.colorNames();
         Set<Palette> paletteDomains = new LinkedHashSet<>(Arrays.asList(Palette.values()));

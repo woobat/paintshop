@@ -25,13 +25,15 @@ public abstract class AbstractSolver implements Solver {
 
     protected abstract List<Customer> customerListAfterColorAssignment(Problem problem, String colorName, Palette domain) throws ConstraintViolation;
 
-    protected abstract Assignment assignColor(Problem problem);
+    protected Assignment assignColor(Problem problem) {
+        // pick a color along with the domain
+        return new Assignment(problem.colorNames().get(0), Palette.values());
+    }
 
     @Override
     public Optional<Solution> solution() {
 
-        Comparator<Solution> sortedSolutions = Comparator.comparingInt(Solution::totalMattes);
-        solutions.sort(sortedSolutions);
+        solutions.sort(Comparator.comparingInt(Solution::totalMattes));
 
         Solution result = null;
         if (solutions.size() >= 1)

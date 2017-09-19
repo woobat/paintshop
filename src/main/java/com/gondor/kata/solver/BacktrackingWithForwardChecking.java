@@ -20,11 +20,6 @@ public class BacktrackingWithForwardChecking extends AbstractSolver {
         super(problem);
     }
 
-    protected Assignment assignColor(Problem problem) {
-        // choose a color along with the domain
-        return new Assignment(problem.colorNames().get(0), Palette.values());
-    }
-
     @Override
     protected List<Customer> customerListAfterColorAssignment(Problem problem, String colorName, Palette domain) throws ConstraintViolation {
         /*

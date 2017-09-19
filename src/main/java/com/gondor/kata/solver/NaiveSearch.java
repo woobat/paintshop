@@ -19,11 +19,6 @@ public class NaiveSearch extends AbstractSolver {
         super(problem);
     }
 
-    protected Assignment assignColor(Problem problem) {
-        // assign a color
-        return new Assignment(problem.colorNames().get(0), Palette.values());
-    }
-
     @Override
     protected List<Customer> customerListAfterColorAssignment(Problem problem, String colorName, Palette domain) throws ConstraintViolation {
         return problem.customers();
